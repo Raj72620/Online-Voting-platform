@@ -1,18 +1,18 @@
-move bun.lockb frontend\
-move components.json frontend\
-move Dockerfile.frontend frontend\
-move eslint.config.js frontend\
-move index.html frontend\
-move netlify.toml frontend\
-move nginx.conf frontend\
-move package-lock.json frontend\
-move package.json frontend\
-move postcss.config.js frontend\
-move public frontend\
-move src frontend\
-move tailwind.config.js frontend\
-move tsconfig.app.json frontend\
-move tsconfig.json frontend\
-move tsconfig.node.json frontend\
-move vite.config.ts frontend\
-move supabase backend\
+move /y bun.lockb frontend\
+move /y components.json frontend\
+move /y Dockerfile.frontend frontend\
+move /y eslint.config.js frontend\
+move /y index.html frontend\
+move /y netlify.toml frontend\
+move /y nginx.conf frontend\
+move /y package-lock.json frontend\
+move /y package.json frontend\
+move /y postcss.config.js frontend\
+move /y public frontend\
+move /y src frontend\
+move /y tailwind.config.js frontend\
+move /y tsconfig.app.json frontend\
+move /y tsconfig.json frontend\
+move /y tsconfig.node.json frontend\
+move /y vite.config.ts frontend\
+move /y supabase backend\

@@ -31,7 +31,7 @@ services:
   # Frontend Web Server (Production Build)
   frontend:
     build:
-      context: .
+      context: ./frontend
       dockerfile: Dockerfile.frontend
     ports:
       - "8080:8080"
