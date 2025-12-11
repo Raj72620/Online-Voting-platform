@@ -27,7 +27,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use((req, res, next) => {
   console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
   next();
-});+
+});
+
+// Root route
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Avalanche Voting Platform Backend is running',
+    endpoints: {
+      health: '/api/health',
+      docs: '/api/docs'
+    }
+  });
+});
 
 
 
@@ -39,8 +50,8 @@ app.use('/api/govt-admin', govtAdminRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
-  res.json({ 
-    status: 'ok', 
+  res.json({
+    status: 'ok',
     network: 'avalanche-fuji',
     timestamp: new Date().toISOString(),
     uptime: process.uptime()
@@ -50,7 +61,7 @@ app.get('/api/health', (req, res) => {
 // Serve static files from React build (for production)
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../dist')));
-  
+
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../dist', 'index.html'));
   });
@@ -59,7 +70,7 @@ if (process.env.NODE_ENV === 'production') {
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error('Error:', err);
-  res.status(500).json({ 
+  res.status(500).json({
     error: 'Internal server error',
     message: process.env.NODE_ENV === 'development' ? err.message : 'Something went wrong'
   });
